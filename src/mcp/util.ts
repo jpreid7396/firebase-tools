@@ -3,7 +3,14 @@ import { execSync } from "child_process";
 import { dump } from "js-yaml";
 import { platform } from "os";
 import { ServerFeature } from "./types";
-import { authManagementOrigin, dataconnectOrigin, firestoreOrigin, storageOrigin, crashlyticsApiOrigin } from "../api";
+import {
+  authManagementOrigin,
+  dataconnectOrigin,
+  firestoreOrigin,
+  messagingApiOrigin,
+  crashlyticsApiOrigin,
+  storageOrigin,
+} from "../api";
 import { check } from "../ensureApiEnabled";
 
 export function toContent(data: any, options?: { format: "json" | "yaml" }): CallToolResult {
@@ -63,6 +70,7 @@ const SERVER_FEATURE_APIS: Record<ServerFeature, string> = {
   dataconnect: dataconnectOrigin(),
   auth: authManagementOrigin(),
   crashlytics: crashlyticsApiOrigin(),
+  messaging: messagingApiOrigin(),
 };
 /**
  * Detects whether an MCP feature is active in the current project root. Relies first on

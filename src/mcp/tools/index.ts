@@ -6,7 +6,8 @@ import { firestoreTools } from "./firestore/index.js";
 import { directoryTools } from "./directory/index.js";
 import { coreTools } from "./core/index.js";
 import { storageTools } from "./storage/index.js";
-import { crashlyticsTools } from "./crashlytics/index.js"
+import { crashlyticsTools } from "./crashlytics/index.js";
+import { messagingTools } from "./messaging/index.js";
 
 /** availableTools returns the list of MCP tools available given the server flags */
 export function availableTools(fixedRoot: boolean, activeFeatures?: ServerFeature[]): ServerTool[] {
@@ -30,7 +31,8 @@ const tools: Record<ServerFeature, ServerTool[]> = {
   auth: addPrefixToToolName("auth_", authTools),
   dataconnect: addPrefixToToolName("dataconnect_", dataconnectTools),
   storage: addPrefixToToolName("storage_", storageTools),
-  crashlytics: addPrefixToToolName("crashlytics_", crashlyticsTools)
+  crashlytics: addPrefixToToolName("crashlytics_", crashlyticsTools),
+  messaging: addPrefixToToolName("messaging_", messagingTools),
 };
 
 function addPrefixToToolName(prefix: string, tools: ServerTool[]): ServerTool[] {
