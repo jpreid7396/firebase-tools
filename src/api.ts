@@ -126,7 +126,7 @@ export const rtdbMetadataOrigin = () =>
 export const remoteConfigApiOrigin = () =>
   utils.envOverride("FIREBASE_REMOTE_CONFIG_URL", "https://firebaseremoteconfig.googleapis.com");
 export const crashlyticsApiOrigin = () =>
-  utils.envOverride("FIREBASE_CRASHLYTICS_CONFIG_URL", "https://firebasecrashlytics.googleapis.com");
+  utils.envOverride("FIREBASE_CRASHLYTICS_URL", "https://firebasecrashlytics.googleapis.com");
 export const messagingApiOrigin = () =>
   utils.envOverride("FIREBASE_MESSAGING_CONFIG_URL", "https://fcm.googleapis.com");
 export const resourceManagerOrigin = () =>
