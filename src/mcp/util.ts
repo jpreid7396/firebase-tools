@@ -9,6 +9,7 @@ import {
   firestoreOrigin,
   messagingApiOrigin,
   crashlyticsApiOrigin,
+  remoteConfigApiOrigin,
   storageOrigin,
 } from "../api";
 import { check } from "../ensureApiEnabled";
@@ -71,6 +72,7 @@ const SERVER_FEATURE_APIS: Record<ServerFeature, string> = {
   auth: authManagementOrigin(),
   crashlytics: crashlyticsApiOrigin(),
   messaging: messagingApiOrigin(),
+  remoteconfig: remoteConfigApiOrigin(),
 };
 /**
  * Detects whether an MCP feature is active in the current project root. Relies first on
